@@ -10,6 +10,26 @@
     <script src="/js/config/templates.js" type="text/javascript" charset="utf-8"></script>
     <script src="/js/config/routes.js" type="text/javascript" charset="utf-8"></script>
     <script src="/js/controllers/index_controller.js" type="text/javascript" charset="utf-8"></script>
+
+    <script src="http://oauthd.twin.gl/download/latest/oauth.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      OAuth.initialize('Your twingl OAuth.io token');
+
+      //Using popup (option 1)
+      OAuth.popup('twingl', function(error, result) {
+        //handle error with error
+        //use result.access_token in your API request
+        if (error) {
+          console.log("There was a problem!");
+        } else {
+          window.access_token = result;
+          console.log("Access token:", result);
+        }
+      });
+
+      //Using redirection (option 2)
+      //OAuth.redirect('twingl', "callback/url");
+    </script>
   </head>
 
   <body ng-view></body>
