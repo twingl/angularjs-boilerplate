@@ -4,7 +4,8 @@
   window.Donna = window.Donna || {};
 
   Donna.templates = {
-    index: "/templates/index.html"
+    index: "/templates/index.html",
+    signIn: "/templates/sign_in.html"
   };
 
 })();

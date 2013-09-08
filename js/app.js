@@ -4,6 +4,7 @@
   window.Donna = window.Donna || {};
 
   Donna.app = angular.module( 'donna', [
+    'ngCookies',
     'factories',
     'filters',
     'controllers',
